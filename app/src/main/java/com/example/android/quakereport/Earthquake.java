@@ -1,48 +1,63 @@
 package com.example.android.quakereport;
 
+/**
+ * An {@link Earthquake} object contains information related to a single earthquake.
+ */
 public class Earthquake {
 
-    /* 地震の震度 */
-    private String mMagnitude;
-    /* 地震の場所 */
-    private String mLocation;
-    /* 地震の日時 */
-    private String mDate;
+    /** Magnitude of the earthquake */
+    private double mMagnitude;
 
+    /** Location of the earthquake */
+    private String mLocation;
+
+    /** Time of the earthquake */
+    private long mTimeInMilliseconds;
+
+    /** Website URL of the earthquake */
+    private String mUrl;
 
     /**
+     * Constructs a new {@link Earthquake} object.
      *
-     * @param Magnitude 地震の震度
-     * @param Location 地震の場所
-     * @param Date 地震の日時
+     * @param magnitude is the magnitude (size) of the earthquake
+     * @param location is the location where the earthquake happened
+     * @param timeInMilliseconds is the time in milliseconds (from the Epoch) when the
+     *                           earthquake happened
+     * @param url is the website URL to find more details about the earthquake
      */
-    public Earthquake(String Magnitude, String Location, String Date) {
-        this.mMagnitude = Magnitude;
-        this.mLocation = Location;
-        this.mDate = Date;
+    public Earthquake(double magnitude, String location, long timeInMilliseconds, String url) {
+        mMagnitude = magnitude;
+        mLocation = location;
+        mTimeInMilliseconds = timeInMilliseconds;
+        mUrl = url;
     }
 
-    public String getmMagnitude() {
+    /**
+     * Returns the magnitude of the earthquake.
+     */
+    public double getMagnitude() {
         return mMagnitude;
     }
 
-    public void setmMagnitude(String mMagnitude) {
-        this.mMagnitude = mMagnitude;
-    }
-
-    public String getmLocation() {
+    /**
+     * Returns the location of the earthquake.
+     */
+    public String getLocation() {
         return mLocation;
     }
 
-    public void setmLocation(String mLocation) {
-        this.mLocation = mLocation;
+    /**
+     * Returns the time of the earthquake.
+     */
+    public long getTimeInMilliseconds() {
+        return mTimeInMilliseconds;
     }
 
-    public String getmDate() {
-        return mDate;
-    }
-
-    public void setmDate(String mDate) {
-        this.mDate = mDate;
+    /**
+     * Returns the website URL to find more information about the earthquake.
+     */
+    public String getUrl() {
+        return mUrl;
     }
 }
